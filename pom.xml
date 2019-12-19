@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.yunhua.czc</groupId>
+    <artifactId>zuulfenxiang</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>gateway</module>
+        <module>api</module>
+        <module>biz</module>
+        <module>eureka</module>
+    </modules>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <springcloud.version>1.4.4.RELEASE</springcloud.version>
+        <mydemo.version>1.0-SNAPSHOT</mydemo.version>
+        <yunhua.component.version>3.0.0-SNAPSHOT</yunhua.component.version>
+        <mysql-connector-java.version>8.0.17</mysql-connector-java.version>
+    </properties>
+    <dependencyManagement>
+            <dependencies>
+                <!--springcloud 相关组件-->
+                <dependency>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-starter-zuul</artifactId>
+                    <version>${springcloud.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-starter-eureka-server</artifactId>
+                    <version>${springcloud.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-starter-eureka</artifactId>
+                    <version>${springcloud.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-starter-feign</artifactId>
+                    <version>${springcloud.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+                    <version>${springcloud.version}</version>
+                </dependency>
+
+                <!--springcloud 相关组件-->
+
+                <!--云华模块版本-->
+                <dependency>
+                    <groupId>com.yunhuakeji.component</groupId>
+                    <artifactId>mybatis</artifactId>
+                    <version>${yunhua.component.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.yunhuakeji.component</groupId>
+                    <artifactId>doc</artifactId>
+                    <version>${yunhua.component.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.yunhuakeji.component</groupId>
+                    <artifactId>web</artifactId>
+                    <version>${yunhua.component.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.yunhuakeji.component</groupId>
+                    <artifactId>base</artifactId>
+                    <version>${yunhua.component.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.yunhuakeji.component</groupId>
+                    <artifactId>mybatis</artifactId>
+                    <version>${yunhua.component.version}</version>
+                </dependency>
+                <!--云华模块版本-->
+
+                <!--mysql驱动-->
+                <dependency>
+                    <groupId>mysql</groupId>
+                    <artifactId>mysql-connector-java</artifactId>
+                    <version>${mysql-connector-java.version}</version>
+                </dependency>
+                <!--mysql驱动-->
+
+                <!--服务client版本-->
+                <dependency>
+                    <groupId>com.yunhua.czc.zuulfenxiang.api</groupId>
+                    <artifactId>gatewayconfig-api</artifactId>
+                    <version>${mydemo.version}</version>
+                </dependency>
+                <!--服务client版本-->
+
+
+            </dependencies>
+    </dependencyManagement>
+
+
+
+
+
+
+</project>

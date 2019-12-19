@@ -1,0 +1,51 @@
+spring:
+  application:
+    name: gatewaymanager
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 123456
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+server:
+  port: 7004
+eureka:
+  instance:
+    hostname: localhost
+    metadata-map:
+      version: current
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7000/eureka/
+    ## 实例定时拉注册表的时间 默认30秒
+    registryFetchIntervalSeconds: 3
+    ## 心跳间隔，默认30秒(???貌似没起效)
+    leaseRenewalIntervalInSeconds: 3
+zuul:
+  retryable: true
+feign:
+  # 关闭hystrix熔断和降级机制
+  hystrix:
+    enabled: false
+ribbon:
+  eager-load:
+    #每个服务第一次被请求的时候，
+    #会初始化一个ribbon的组件，初始化这些组件会耗费一定时间，每个服务启动的时候预加载
+    enabled: true
+  ##连接时间
+  ConnetTimeout: 1000
+  ##响应时间
+  ReadTimeout: 1000
+  ## 是否重试
+  OkToRetryOnAllOperations: true
+  ## 重试本台机器次数
+  MaxAutoRetries: 1
+  ## 重试其他机器次数
+  MaxAutoRetriesNextServer: 1
+yunhua:
+  component:
+    doc:
+      enabled: true

@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: eureka-server
+server:
+  port: 7000
+
+eureka:
+  server:
+    ## 自我保护，一大批服务实例没有心跳触发自我保护，不修改注册表，但是有bug，所以建议关掉
+    ##enableSelfPreservation: false
+    ## 检查心跳时间(毫秒-默认60秒)
+    evictionIntervalTimerInMs: 6000
+    ## readOnly与readWrite的同步的间隔时间(毫秒-默认30秒)
+    responseCacheUpdateIntervalMs: 3000
+  instance:
+    hostname: localhost
+    ## 检查心跳间隔超出多长时间把服务挂掉
+    leaseExpirationDurationInSeconds : 9
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+
+##### 双机注册中心配置
+## spring:
+##   application:
+##     name: eureka-server
+## server:
+##   port: 7000
+## eureka:
+##   instance:
+##     hostname: peer1
+##   api:
+##     ## 如果不为true 将不会注册到另一台eureka
+##     register-with-eureka: true
+##     fetch-registry: true
+##     service-url:
+##       ## 这里如果有多个节点可以以逗号分隔 然后注册
+##       defaultZone: http://peer2:7001/eureka/
+
