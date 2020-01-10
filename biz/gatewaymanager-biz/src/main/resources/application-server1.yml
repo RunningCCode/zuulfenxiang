@@ -35,13 +35,13 @@ ribbon:
     #每个服务第一次被请求的时候，
     #会初始化一个ribbon的组件，初始化这些组件会耗费一定时间，每个服务启动的时候预加载
     enabled: true
-  ##连接时间
+  ##连接时间（单位毫秒）
   ConnetTimeout: 1000
-  ##响应时间
+  ##响应时间（单位毫秒）
   ReadTimeout: 1000
   ## 是否重试
   OkToRetryOnAllOperations: true
-  ## 重试本台机器次数
+  ## 重试当前机器实例次数
   MaxAutoRetries: 1
   ## 重试其他机器次数
   MaxAutoRetriesNextServer: 1

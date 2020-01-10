@@ -22,8 +22,11 @@ eureka:
     registryFetchIntervalSeconds: 3
     ## 心跳间隔，默认30秒(???貌似没起效)
     leaseRenewalIntervalInSeconds: 3
+
 zuul:
   retryable: true
+  ## 不自动创建路由，全部由后台表控制
+  ignored-services: '*'
 ##  routes:
 ##    client-a:
 ##      path: /client/**

@@ -18,10 +18,12 @@ eureka:
     leaseExpirationDurationInSeconds : 9
   client:
     register-with-eureka: false
-    fetch-registry: false
+    fetch-registry: true
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-
+ribbon:
+  eureka:
+    enabled: true
 
 ##### 双机注册中心配置
 ## spring:

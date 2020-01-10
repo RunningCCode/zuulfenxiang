@@ -25,7 +25,8 @@ import java.util.stream.Collectors;
  */
 @Log4j2
 @Component
-public class DynamicRouteLocator extends SimpleRouteLocator implements RefreshableRouteLocator{
+
+public class DynamicRouteLocator extends SimpleRouteLocator implements RefreshableRouteLocator {
 
 
     private ZuulProperties properties;
@@ -33,7 +34,7 @@ public class DynamicRouteLocator extends SimpleRouteLocator implements Refreshab
     private GatewayApiRouteService gatewayApiRouteService;
 
     @Autowired
-    public DynamicRouteLocator(ServerProperties server, ZuulProperties properties,GatewayApiRouteService gatewayApiRouteService) {
+    public DynamicRouteLocator(ServerProperties server, ZuulProperties properties, GatewayApiRouteService gatewayApiRouteService) {
         super(server.getServletPrefix(), properties);
         this.properties = properties;
         this.server = server;
@@ -46,9 +47,9 @@ public class DynamicRouteLocator extends SimpleRouteLocator implements Refreshab
         doRefresh();
     }
 
-  /**
-    * 定时获取路由表的方法
-    */
+    /**
+     * 定时获取路由表的方法
+     */
     @Override
     protected Map<String, ZuulProperties.ZuulRoute> locateRoutes() {
         LinkedHashMap<String, ZuulProperties.ZuulRoute> routesMap = new LinkedHashMap<>();
