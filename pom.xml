@@ -21,7 +21,7 @@
         <springcloud.version>1.4.4.RELEASE</springcloud.version>
         <mydemo.version>1.0-SNAPSHOT</mydemo.version>
         <yunhua.component.version>3.0.0-SNAPSHOT</yunhua.component.version>
-        <mysql-connector-java.version>8.0.17</mysql-connector-java.version>
+        <mysql-connector-java.version>8.0.28</mysql-connector-java.version>
     </properties>
     <dependencyManagement>
             <dependencies>
